@@ -131,21 +131,24 @@ function App() {
 
   return (
     <div className="app">
-      <div className="innerContent">
+      <div className="appContent">
         <h2 className="title">Page Summary</h2>
-        {loading && <p className="loading">Generating summary...</p>}
-        {error && <p className="error">Error: {error}</p>}
-        {!loading && !error && summary.length > 0 && (
-          <ul className="summary-list">
-            {summary.map((point, index) => (
-              <li key={index}>{point}</li>
-            ))}
-          </ul>
-        )}
-        {!loading && !error && summary.length === 0 && (
-          <p className="no-summary">No summary available</p>
-        )}
+        <div className="innerContent">
+          {loading && <p className="loading">Generating summary...</p>}
+          {error && <p className="error">Error: {error}</p>}
+          {!loading && !error && summary.length > 0 && (
+            <ul className="summary-list">
+              {summary.map((point, index) => (
+                <li key={index}>{point}</li>
+              ))}
+            </ul>
+          )}
+          {!loading && !error && summary.length === 0 && (
+            <p className="no-summary">No summary available</p>
+          )}
+        </div>
       </div>
+        
     </div>
   );
 }
